@@ -6,8 +6,8 @@ string[] maoriTermsMedium = { "pounamu", "tamāhine", "tangi", "whānau", "whenu
 string[] englishTermsMedium = { "jade", "daughter", "funeral", "family", "land", "elder", "guests", "island", "sand", "hill"  };
 string[] englishTermsMediumOr = { "green stone", "daughter", "funeral", "family", "home land", "elderly", "visitors", "island", "earth", "hill" };
 
-string[] englishTermsHard = { };
-string[] MaoriTermsHard = { };
+string[] englishTermsHard = { "greenstone / jade", "daughter", "funeral", "family", "land / home land", "elder / elderly", "guests / visitors", "island", "sand / earth", "hill" };
+string[] MaoriTermsHard = { "pounamu", "tamahine", "tangi", "whanaua", "whenua", "kaumatua", "manuhiri", "motu", "one", "puke" };
 
 int indexEasy = 0; //I have declared my index variable for easy level and set it to 0. I have set this to 0 as the first index is 0
 int scoreEasy = 0; //I have declared my score variable for easy level and set it to 0. this will calculate the total and keep a running total
@@ -30,7 +30,7 @@ while (levelDifficulty != "easy" && levelDifficulty != "medium" && levelDifficul
 }
 if (levelDifficulty == "easy")
 {
-    foreach (string MaoriTermMedium in maoriTermsEasy)
+    foreach (string MaoriTermEasy in maoriTermsEasy)
     {
         Console.WriteLine($"What is the meaning of {maoriTermsEasy[indexEasy]}: ");
         string ans = Console.ReadLine();
@@ -68,4 +68,25 @@ if (levelDifficulty == "medium")
         indexMedium++;
     }
     Console.WriteLine($"\n\nYour score was {scoreMedium} / 10");
+}
+
+if (levelDifficulty == "hard")
+{
+    foreach (string englishTermHard in englishTermsHard)
+    {
+        Console.WriteLine($"What is the english translation of {englishTermHard[indexHard]}: ");
+        string ans = Console.ReadLine();
+        if (ans == MaoriTermsHard[indexHard])
+        {
+            Console.WriteLine("That was correct!");
+            scoreHard++;
+
+        }
+        else
+        {
+            Console.WriteLine("That was incorrect.");
+        }
+        indexHard++;
+    }
+    Console.WriteLine($"\n\nYour score was {scoreHard} / 10");
 }
