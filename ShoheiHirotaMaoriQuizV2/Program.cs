@@ -1,22 +1,23 @@
-﻿string[] maoriTermsEasy = { "kia ora", "awa", "kai", "waiata", "waka", "aroha", "morena", "maunga", "tamaki makaurau", "tahi" }; //I have declared my arrays which will be used in my quiz
+﻿string[] maoriTermsEasy = { "kia ora", "awa", "kai", "waiata", "waka", "aroha", "morena", "maunga", "tamaki makaurau", "tahi" }; //I have declared my easy difficuly arrays which will be used in my quiz
 string[] englishTermsEasy = { "hello", "river", "food", "song", "canoe", "love", "good morning", "mountain", "auckland", "one" }; //I have declared my arrays which will be used in my quiz
-string[] englishTermsEasyOr = { "hi", "river", "food", "sing", "canoe", "love", "good morning", "mountain", "auckalnd", "one" };
+string[] englishTermsEasyOr = { "hi", "river", "food", "sing", "canoe", "love", "good morning", "mountain", "auckalnd", "one" }; // I have declared an 'Or' array as there may be more than one answer for a question. So if they get one of the two answers, then they will be correct/ and get a point
 
-string[] maoriTermsMedium = { "pounamu", "tamāhine", "tangi", "whānau", "whenua", "Kaumatua", "manuhiri", "motu", "one", "puke" };
-string[] englishTermsMedium = { "jade", "daughter", "funeral", "family", "land", "elder", "guests", "island", "sand", "hill"  };
-string[] englishTermsMediumOr = { "green stone", "daughter", "funeral", "family", "home land", "elderly", "visitors", "island", "earth", "hill" };
+
+string[] maoriTermsMedium = { "pounamu", "tamāhine", "tangi", "whānau", "whenua", "Kaumatua", "manuhiri", "motu", "one", "puke" }; //I have declared my medium difficulty arrays. These are the questions the user will be asked to translate. 
+string[] englishTermsMedium = { "jade", "daughter", "funeral", "family", "land", "elder", "guests", "island", "sand", "hill"  }; //I have delared my medium diffculty english term arrays. These are the correct translations to the questions. 
+string[] englishTermsMediumOr = { "green stone", "daughter", "funeral", "family", "home land", "elderly", "visitors", "island", "earth", "hill" }; //I have declared my other medium difficulty english term arrays. There may be more than one translation so these are the other correct translations.
 
 string[] englishTermsHard = { "greenstone / jade", "daughter", "funeral", "family", "land / home land", "elder / elderly", "guests / visitors", "island", "sand / earth", "hill" };
 string[] MaoriTermsHard = { "pounamu", "tamahine", "tangi", "whanaua", "whenua", "kaumatua", "manuhiri", "motu", "one", "puke" };
 
-int indexEasy = 0; //I have declared my index variable for easy level and set it to 0. I have set this to 0 as the first index is 0
+int indexEasy = 0; //I have declared my index variable for easy level and set it to 0. I have set this to 0 so it starts from the very beginning.
 int scoreEasy = 0; //I have declared my score variable for easy level and set it to 0. this will calculate the total and keep a running total
 
-int indexMedium = 0;
-int scoreMedium = 0;
+int indexMedium = 0; //I have declared my index variable for medium level and set it to 0. I have set this to 0 so it starts from the very beginning.
+int scoreMedium = 0; //I have declared my score variable for medium level and set it to 0. This will calculate the total and keep a running total
 
-int indexHard = 0;
-int scoreHard = 0;
+int indexHard = 0; //I have declared my index variable for hard level and set it to 0. I have set this to 0 so it starts from the very beginning.
+int scoreHard = 0; //I have declared my score variable for harf level and set it to 0. This will calculate the total and keep a running total
 
 
 
