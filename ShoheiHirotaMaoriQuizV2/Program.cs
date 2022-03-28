@@ -19,6 +19,7 @@ int indexHard = 0; //I have declared my index variable for hard level and set it
 int scoreHard = 0; //I have declared my score variable for hard level and set it to 0. T
                    //his will calculate the total and keep a running total
 
+char userInputChoice = 'y';
 
 Console.WriteLine("Welcome to my Te Reo Maori quiz! There are 3 difficulty levels\n\neasy level will ask you 10 questions and they will ask you for the English meaning of a Maori term.\nmedium level will ask you 10 harder questions and they will ask you for the English meaning of a Maori term.\nhard level will ask you 10 questions and they will ask you for the Maori translation of a English term. \n\nPlease enter the difficulty level (easy, medium or hard)\n *NOTE please enter all your inputs in lowercase*");
 string levelDifficulty = Console.ReadLine();
@@ -28,71 +29,90 @@ while (levelDifficulty != "easy" && levelDifficulty != "medium" && levelDifficul
     Console.WriteLine("Please enter a valid input. Remember, the only valid inputs for this program are 'easy', 'medium' and 'hard': ");
     levelDifficulty = Console.ReadLine();
 }
-if (levelDifficulty == "easy")
+
+do
 {
-    foreach (string MaoriTermEasy in maoriTermsEasy)
+    if (levelDifficulty == "easy")
     {
-        Console.WriteLine($"What is the english translation of {maoriTermsEasy[indexEasy]}: ");
-        string ans = Console.ReadLine();
-        if (ans == englishTermsEasy[indexEasy] || ans == englishTermsEasyOr[indexEasy])
+        foreach (string MaoriTermEasy in maoriTermsEasy)
         {
-            Console.WriteLine("That was correct!");
-            scoreEasy++;
+            Console.WriteLine($"What is the english translation of {maoriTermsEasy[indexEasy]}: ");
+            string ans = Console.ReadLine();
+            if (ans == englishTermsEasy[indexEasy] || ans == englishTermsEasyOr[indexEasy])
+            {
+                Console.WriteLine("That was correct!");
+                scoreEasy++;
 
+            }
+            else
+            {
+                Console.WriteLine("That was incorrect.");
+            }
+            indexEasy++;
         }
-        else
-        {
-            Console.WriteLine("That was incorrect.");
-        }
-        indexEasy++;
+        Console.WriteLine($"\n\nYour score was {scoreEasy} / 10");
     }
-    Console.WriteLine($"\n\nYour score was {scoreEasy} / 10");
-}
 
-if (levelDifficulty == "medium")
-{
-    foreach (string MaoriTermMedium in maoriTermsMedium)
+    if (levelDifficulty == "medium")
     {
-        Console.WriteLine($"What is the english translation of {maoriTermsMedium[indexMedium]}: ");
-        string ans = Console.ReadLine();
-        if (ans == englishTermsMedium[indexMedium] || ans == englishTermsMediumOr[indexMedium])
+        foreach (string MaoriTermMedium in maoriTermsMedium)
         {
-            Console.WriteLine("That was correct!");
-            scoreMedium++;
+            Console.WriteLine($"What is the english translation of {maoriTermsMedium[indexMedium]}: ");
+            string ans = Console.ReadLine();
+            if (ans == englishTermsMedium[indexMedium] || ans == englishTermsMediumOr[indexMedium])
+            {
+                Console.WriteLine("That was correct!");
+                scoreMedium++;
 
+            }
+            else
+            {
+                Console.WriteLine("That was incorrect.");
+            }
+            indexMedium++;
         }
-        else
-        {
-            Console.WriteLine("That was incorrect.");
-        }
-        indexMedium++;
+        Console.WriteLine($"\n\nYour score was {scoreMedium} / 10");
     }
-    Console.WriteLine($"\n\nYour score was {scoreMedium} / 10");
-}
 
-if (levelDifficulty == "hard")
-{
-    foreach (string EnglishTermHard in englishTermsHard) // I have finally found the issue as to why my code did not work for difficulty level 'hard'. I had declared the same exact array in the foreach method which casued the code to bug. The solution was to change the 'englishTermHard' to 'EnglishTermHard'.
+    if (levelDifficulty == "hard")
     {
-        Console.WriteLine($"What is the english translation of {englishTermsHard[indexHard]}: "); //I also had an issue here. I had a spelling error which caused the code to not run. I simply fixed spelling error and the code ran
-        string ans = Console.ReadLine();
-        if (ans == MaoriTermsHard[indexHard])
+        foreach (string EnglishTermHard in englishTermsHard) // I have finally found the issue as to why my code did not work for difficulty level 'hard'. I had declared the same exact array in the foreach method which casued the code to bug. The solution was to change the 'englishTermHard' to 'EnglishTermHard'.
         {
-            Console.WriteLine("That was correct!");
-            scoreHard++;
+            Console.WriteLine($"What is the english translation of {englishTermsHard[indexHard]}: "); //I also had an issue here. I had a spelling error which caused the code to not run. I simply fixed spelling error and the code ran
+            string ans = Console.ReadLine();
+            if (ans == MaoriTermsHard[indexHard])
+            {
+                Console.WriteLine("That was correct!");
+                scoreHard++;
 
+            }
+            else
+            {
+                Console.WriteLine("That was incorrect.");
+            }
+            indexHard++;
         }
-        else
-        {
-            Console.WriteLine("That was incorrect.");
-        }
-        indexHard++;
+        Console.WriteLine($"\n\nYour score was {scoreHard} / 10");
     }
-    Console.WriteLine($"\n\nYour score was {scoreHard} / 10");
-}
+
+    Console.Write("\nIf you wish to continue to use this program, please enter 'y'. If not, please press any key: ");
+    userInputChoice = char.Parse(Console.ReadLine());
+
+} while(userInputChoice == 'y') ;
+
+Console.WriteLine("\nThanks for using this program...Good Bye\nPress Enter to Exit");
+Console.ReadKey();
 
 
 
-int finalScore = scoreEasy
+
+
+
+
+
+
+
+
+
 //make an method
 //use the do while loop to ask whether the user wants to cont
