@@ -21,22 +21,29 @@ int scoreHard = 0; //I have declared my score variable for hard level and set it
 
 char userInputChoice = 'y';
 
-Console.WriteLine("Welcome to my Te Reo Maori quiz! There are 3 difficulty levels\n\neasy level will ask you 10 questions and they will ask you for the English meaning of a Maori term.\nmedium level will ask you 10 harder questions and they will ask you for the English meaning of a Maori term.\nhard level will ask you 10 questions and they will ask you for the Maori translation of a English term. \n\nPlease enter the difficulty level (easy, medium or hard)\n *NOTE please enter all your inputs in lowercase*");
-string levelDifficulty = Console.ReadLine();
-
-while (levelDifficulty != "easy" && levelDifficulty != "medium" && levelDifficulty != "hard")
-{
-    Console.WriteLine("Please enter a valid input. Remember, the only valid inputs for this program are 'easy', 'medium' and 'hard': ");
-    levelDifficulty = Console.ReadLine();
-}
-
 do
 {
+    Console.WriteLine("Welcome to my Te Reo Maori quiz! There are 3 difficulty levels\n\neasy level will ask you 10 questions and they will ask you for the English meaning of a Maori term.\nmedium level will ask you 10 harder questions and they will ask you for the English meaning of a Maori term.\nhard level will ask you 10 questions and they will ask you for the Maori translation of a English term. \n\nPlease enter the difficulty level (easy, medium or hard)\n *NOTE please enter all your inputs in lowercase*");
+    string levelDifficulty = Console.ReadLine();
+
+
+
+
+
+
+
+    while (levelDifficulty != "easy" && levelDifficulty != "medium" && levelDifficulty != "hard")
+    {
+        Console.WriteLine("Please enter a valid input. Remember, the only valid inputs for this program are 'easy', 'medium' and 'hard': ");
+        levelDifficulty = Console.ReadLine();
+    }
+
+
     if (levelDifficulty == "easy")
     {
         foreach (string MaoriTermEasy in maoriTermsEasy)
         {
-            Console.WriteLine($"What is the english translation of {maoriTermsEasy[indexEasy]}: ");
+            Console.Write($"\nWhat is the english translation of {maoriTermsEasy[indexEasy]}: "); //I have added a line gap (\n) to make the code more clear the user. I also changed Console.WriteLine -> Console.Write. I did this so the user inputs their answer on the same line. 
             string ans = Console.ReadLine();
             if (ans == englishTermsEasy[indexEasy] || ans == englishTermsEasyOr[indexEasy])
             {
@@ -57,7 +64,7 @@ do
     {
         foreach (string MaoriTermMedium in maoriTermsMedium)
         {
-            Console.WriteLine($"What is the english translation of {maoriTermsMedium[indexMedium]}: ");
+            Console.Write($"\nWhat is the english translation of {maoriTermsMedium[indexMedium]}: ");
             string ans = Console.ReadLine();
             if (ans == englishTermsMedium[indexMedium] || ans == englishTermsMediumOr[indexMedium])
             {
@@ -78,7 +85,7 @@ do
     {
         foreach (string EnglishTermHard in englishTermsHard) // I have finally found the issue as to why my code did not work for difficulty level 'hard'. I had declared the same exact array in the foreach method which casued the code to bug. The solution was to change the 'englishTermHard' to 'EnglishTermHard'.
         {
-            Console.WriteLine($"What is the english translation of {englishTermsHard[indexHard]}: "); //I also had an issue here. I had a spelling error which caused the code to not run. I simply fixed spelling error and the code ran
+            Console.Write($"\nWhat is the english translation of {englishTermsHard[indexHard]}: "); //I also had an issue here. I had a spelling error which caused the code to not run. I simply fixed spelling error and the code ran
             string ans = Console.ReadLine();
             if (ans == MaoriTermsHard[indexHard])
             {
@@ -95,18 +102,19 @@ do
         Console.WriteLine($"\n\nYour score was {scoreHard} / 10");
     }
 
-    Console.Write("\nIf you wish to continue to use this program, please enter 'y'. If not, please press any key: ");
+    Console.Write("\nIf you wish to try another difficulty level, please enter 'y'. If not, please press any key to exit the program/quiz: ");
     userInputChoice = char.Parse(Console.ReadLine());
 
-} while(userInputChoice == 'y') ;
+    indexEasy = indexEasy - 10; //At the end of one loop, I have minused 10 from the indexEasy variable. I did this so indexEasy resets to the beginning (0) and if the user wishes to re-do the same difficulty level, they will be able to do so. This resets the questions for 'easy' level.
+    indexMedium = indexMedium - 10; //At the end of one loop, I have minused 10 from the indexMedium variable. I did this so indexMedium resets to the beginning (0) and if the user wishes to re-do the same difficulty level, they will be able to do so. This resets the questions for 'medium' level.
+    indexHard = indexHard - 10; //At the end of one loop, I have minused 10 from the indexHard variable. I did this so indexHard resets to the beginning (0) and if the user wishes to re-do the same difficulty level, they will be able to do so. This resets the questions for 'hard' level.
 
-Console.WriteLine("\nThanks for using this program...Good Bye\nPress Enter to Exit");
+} while (userInputChoice == 'y');
+
+{
+Console.WriteLine("\nThank you for using my program/quiz :). Press any key to leave...");
 Console.ReadKey();
-
-
-
-
-
+}
 
 
 
@@ -116,3 +124,10 @@ Console.ReadKey();
 
 //make an method
 //use the do while loop to ask whether the user wants to cont
+// {
+//Console.WriteLine("\nThanks for using this program...Good Bye\nPress Enter to Exit");
+//Console.ReadKey();
+//}
+
+/* add more questions in the difficulty levels. 20 questions for each level but only display 10 at a time, if (indexEasy <=10)...
+ */
