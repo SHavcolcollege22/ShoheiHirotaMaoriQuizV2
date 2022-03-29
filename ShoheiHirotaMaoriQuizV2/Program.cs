@@ -94,7 +94,7 @@ do
             }
             else
             {
-                Console.WriteLine("That was incorrect.");
+                Console.WriteLine("That was incorrect."); 
             }
             indexHard++;
         }
