@@ -1,13 +1,46 @@
-﻿string[] maoriTermsEasy = { "kia ora", "awa", "kai", "waiata", "waka", "aroha", "morena", "maunga", "tamaki makaurau", "tahi" }; //I have declared my easy difficuly arrays which will be used in my quiz
-string[] englishTermsEasy = { "hello", "river", "food", "song", "canoe", "love", "good morning", "mountain", "auckland", "one" }; //I have declared my arrays which will be used in my quiz
+﻿//Psuedo Code:
+
+// Set arrays
+  // maoriTermEasy, enlgishTermsEasy, englishTermsEasyOr, maoriTermsMedium, englishTermsMedium, englishTermsMediumOr, englishTermsHard, maoriTermsHard
+
+// Set Index variable
+  // indexEasy, indexMedium, indexHard
+
+// Set Score variable
+  // scoreEasy, scoreMedium, scoreHard
+
+// Display introduction to quiz
+  // Ask the user for difficulty level input
+
+// While levelDifficulty not equal to 'easy', 'medium' and 'hard'
+  // Print error message
+
+// If levelDifficulty == 'easy'
+  // Foreach (string MaoriTermEasy in maoriTermsEasy)
+    // What is the english translation of {maoriTermsEasy[indexEasy]}
+      // If answer == englishTermsEasy[indexEasy] || answer == englishTermsEasyOr[indexEasy]
+        //Print correct and add one to the score count (scoreEasy++)
+     // Else
+       // Print incorrect
+    // Add one to the index (index++) 
+  // Print the total score for how many questions the user got correct for easy level
+//
+
+
+
+
+
+
+string[] maoriTermsEasy = { "kia ora", "awa", "kai", "waiata", "waka", "aroha", "morena", "maunga", "tamaki makaurau", "tahi" }; //I have declared my easy difficuly arrays. These are the questions the user will be asked to translate. 
+string[] englishTermsEasy = { "hello", "river", "food", "song", "canoe", "love", "good morning", "mountain", "auckland", "one" }; //I have declared my arrays which will be used in my quiz 
 string[] englishTermsEasyOr = { "hi", "river", "food", "sing", "canoe", "love", "good morning", "mountain", "auckalnd", "one" }; // I have declared an 'Or' array as there may be more than one answer for a question. So if they get one of the two answers, then they will be correct/ and get a point
 
 string[] maoriTermsMedium = { "pounamu", "tamāhine", "tangi", "whānau", "whenua", "Kaumatua", "manuhiri", "motu", "one", "puke" }; //I have declared my medium difficulty arrays. These are the questions the user will be asked to translate. 
 string[] englishTermsMedium = { "jade", "daughter", "funeral", "family", "land", "elder", "guests", "island", "sand", "hill"  }; //I have delared my medium diffculty english term arrays. These are the correct translations to the questions. 
 string[] englishTermsMediumOr = { "green stone", "daughter", "funeral", "family", "home land", "elderly", "visitors", "island", "earth", "hill" }; //I have declared my other medium difficulty english term arrays. There may be more than one translation so these are the other correct translations.
 
-string[] englishTermsHard = { "greenstone / jade", "daughter", "funeral", "family", "land / home land", "elder / elderly", "guests / visitors", "island", "sand / earth", "hill" };
-string[] MaoriTermsHard = { "pounamu", "tamahine", "tangi", "whanaua", "whenua", "kaumatua", "manuhiri", "motu", "one", "puke" };
+string[] englishTermsHard = { "greenstone / jade", "daughter", "funeral", "family", "land / home land", "elder / elderly", "guests / visitors", "island", "sand / earth", "hill" }; //I have declared my hard difficulty english arrays. These are the questions the user will be asked to translate.
+string[] MaoriTermsHard = { "pounamu", "tamahine", "tangi", "whanaua", "whenua", "kaumatua", "manuhiri", "motu", "one", "puke" }; //I have declared my hard difficulty maori term arrays. These are the correct translations to the questions. 
 
 int indexEasy = 0; //I have declared my index variable for easy level and set it to 0. I have set this to 0 so it starts from the very beginning.
 int scoreEasy = 0; //I have declared my score variable for easy level and set it to 0. this will calculate the total and keep a running total
@@ -16,12 +49,10 @@ int indexMedium = 0; //I have declared my index variable for medium level and se
 int scoreMedium = 0; //I have declared my score variable for medium level and set it to 0. This will calculate the total and keep a running total
 
 int indexHard = 0; //I have declared my index variable for hard level and set it to 0. I have set this to 0 so it starts from the very beginning.
-int scoreHard = 0; //I have declared my score variable for hard level and set it to 0. T
-                   //his will calculate the total and keep a running total
+int scoreHard = 0; //I have declared my score variable for hard level and set it to 0. This will calculate the total and keep a running total
 
 char userInputChoice = 'y';
 
-// use the .ToLower to the levelDifficulty. 
 do
 {
     Console.WriteLine("Welcome to my Te Reo Maori quiz! There are 3 difficulty levels\n\neasy level will ask you 10 questions and they will ask you for the English meaning of a Maori term.\nmedium level will ask you 10 harder questions and they will ask you for the English meaning of a Maori term.\nhard level will ask you 10 questions and they will ask you for the Maori translation of a English term. \n\nPlease enter the difficulty level (easy, medium or hard)\n *NOTE please enter all your inputs in lowercase*");
@@ -41,7 +72,7 @@ do
         {
             Console.Write($"\nWhat is the english translation of {maoriTermsEasy[indexEasy]}: "); //I have added a line gap (\n) to make the code more clear the user. I also changed Console.WriteLine -> Console.Write. I did this so the user inputs their answer on the same line. 
             string ans = Console.ReadLine();
-            string lCaseAns = ans.ToLower();
+            string lCaseAns = ans.ToLower(); //I have converted the asnwer to all lowercase. I am storing this in "lCaseAns" (LowerCaseAnswer).
             if (lCaseAns == englishTermsEasy[indexEasy] || lCaseAns == englishTermsEasyOr[indexEasy])
             {
                 Console.WriteLine("That was correct!");
@@ -63,7 +94,7 @@ do
         {
             Console.Write($"\nWhat is the english translation of {maoriTermsMedium[indexMedium]}: ");
             string ans = Console.ReadLine();
-            string lCaseAns = ans.ToLower();
+            string lCaseAns = ans.ToLower(); //I have converted the asnwer to all lowercase. I am storing this in "lCaseAns" (LowerCaseAnswer).
             if (lCaseAns == englishTermsMedium[indexMedium] || lCaseAns == englishTermsMediumOr[indexMedium])
             {
                 Console.WriteLine("That was correct!");
