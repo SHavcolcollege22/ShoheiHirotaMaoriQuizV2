@@ -12,25 +12,64 @@
 // Display introduction to quiz
   // Ask the user for difficulty level input
 
-// While levelDifficulty not equal to 'easy', 'medium' and 'hard'
-  // Print error message
+// Do all of this in a while loop
 
-// If levelDifficulty == 'easy'
-  // Foreach (string MaoriTermEasy in maoriTermsEasy)
-    // What is the english translation of {maoriTermsEasy[indexEasy]}
-      // If answer == englishTermsEasy[indexEasy] || answer == englishTermsEasyOr[indexEasy]
-        //Print correct and add one to the score count (scoreEasy++)
-     // Else
-       // Print incorrect
-    // Add one to the index (index++) 
-  // Print the total score for how many questions the user got correct for easy level
-//
+  // While levelDifficulty not equal to 'easy', 'medium' and 'hard'
+    // Print error message
+
+  // If levelDifficulty == 'easy'
+    // Foreach (string MaoriTermEasy in maoriTermsEasy)
+      // What is the english translation of {maoriTermsEasy[indexEasy]}
+        // If answer == englishTermsEasy[indexEasy] || answer == englishTermsEasyOr[indexEasy]
+           // Print correct and add one to the score count (scoreEasy++)
+        // Else
+           // Print incorrect
+        // Add one to the index (index++) 
+     // Print the total score for how many questions the user got correct for easy level
+  //
+
+  // If levelDifficulty == 'easy'
+    // Foreach (string MaoriTermEasy in maoriTermsEasy)
+      // What is the english translation of {maoriTermsEasy[indexEasy]}
+        // If answer == englishTermsEasy[indexEasy] || answer == englishTermsEasyOr[indexEasy]
+           // Print correct (and add one to the score count (scoreEasy++))
+        // Else
+           // Print incorrect
+        // Add one to the index (indexEasy++) 
+     // Print the total score for how many questions the user got correct for easy level
+  // Reset the index for this level (indexEasy = indexEasy - 10) (Basically means to reset the questions)
+
+  // If levelDifficulty == 'medium'
+    // Foreach (string MaoriTermMedium in maoriTermMedium)
+      // What is the english translation of {maoriTermMedium[indexMedium]}
+        // If answer == englishTermsMedium[indexMedium] || answer == englishTermsMedium[indexMedium]
+           // Print correct (and add one to the score count (scoreMedium++))
+        // Else
+           // Print incorrect
+        // Add one the the index (indexMedium++)
+     // Print the total sscore for how many questions the user got correct for medium level
+  // Reset the index for this level (indexMedium = indexMedium - 10) (Basically means to reset the questions)
 
 
+  // If levelDifficulty == 'hard'
+    // Foreach (string EnglishTermsHard in englishTermsHard)
+      // What is the Maori translation of {englishTermsHard[indexHard]}
+        // If answer == maoriTermsHard[indexHard]
+           // Print correct (and add one to the score count (scoreHard++))
+        // Else
+           // Print incorrect
+        // Add one the the index (indexHard++)
+     // Print the total sscore for how many questions the user got correct for hard level
+  // Reset the index for this level (indexHard = indexHard - 10)
 
+  // Ask the user if they want to continue or re do a level, if yes, please enter 'y'. If not, please press any key to exit the program/quiz: ");
 
+// while (userInputChoice == 'y');
 
+// Thank the user for using the program
+ 
 
+ 
 string[] maoriTermsEasy = { "kia ora", "awa", "kai", "waiata", "waka", "aroha", "morena", "maunga", "tamaki makaurau", "tahi" }; //I have declared my easy difficuly arrays. These are the questions the user will be asked to translate. 
 string[] englishTermsEasy = { "hello", "river", "food", "song", "canoe", "love", "good morning", "mountain", "auckland", "one" }; //I have declared my arrays which will be used in my quiz 
 string[] englishTermsEasyOr = { "hi", "river", "food", "sing", "canoe", "love", "good morning", "mountain", "auckalnd", "one" }; // I have declared an 'Or' array as there may be more than one answer for a question. So if they get one of the two answers, then they will be correct/ and get a point
@@ -51,11 +90,11 @@ int scoreMedium = 0; //I have declared my score variable for medium level and se
 int indexHard = 0; //I have declared my index variable for hard level and set it to 0. I have set this to 0 so it starts from the very beginning.
 int scoreHard = 0; //I have declared my score variable for hard level and set it to 0. This will calculate the total and keep a running total
 
-char userInputChoice = 'y';
+char userInputChoice = 'y'; 
 
 do
 {
-    Console.WriteLine("Welcome to my Te Reo Maori quiz! There are 3 difficulty levels\n\neasy level will ask you 10 questions and they will ask you for the English meaning of a Maori term.\nmedium level will ask you 10 harder questions and they will ask you for the English meaning of a Maori term.\nhard level will ask you 10 questions and they will ask you for the Maori translation of a English term. \n\nPlease enter the difficulty level (easy, medium or hard)\n *NOTE please enter all your inputs in lowercase*");
+    Console.WriteLine("Welcome to my Te Reo Maori quiz! There are 3 difficulty levels\n\neasy level will ask you 10 questions and they will ask you for the English meaning of a Maori term.\nmedium level will ask you 10 harder questions and they will ask you for the English meaning of a Maori term.\nhard level will ask you 10 questions and they will ask you for the Maori translation of a English term. \n\nPlease enter the difficulty level (easy, medium or hard)\n");
     string levelDifficulty = Console.ReadLine();
 
 
@@ -86,6 +125,7 @@ do
             indexEasy++;
         }
         Console.WriteLine($"\n\nYour score was {scoreEasy} / 10");
+        indexEasy = indexEasy - 10; //After the end of this level (easy level), I have minused 10 from the indexEasy variable. I did this so indexEasy resets to the beginning (0) and if the user wishes to re-do the same difficulty level, they will be able to do so. This resets the questions for 'easy' level.
     }
 
     if (levelDifficulty == "medium")
@@ -108,6 +148,7 @@ do
             indexMedium++;
         }
         Console.WriteLine($"\n\nYour score was {scoreMedium} / 10");
+        indexMedium = indexMedium - 10; //After the end of this level (medium level), I have minused 10 from the indexMedium variable. I did this so indexMedium resets to the beginning (0) and if the user wishes to re-do the same difficulty level, they will be able to do so. This resets the questions for 'medium' level.
     }
 
     if (levelDifficulty == "hard")
@@ -130,14 +171,11 @@ do
             indexHard++;
         }
         Console.WriteLine($"\n\nYour score was {scoreHard} / 10");
+        indexHard = indexHard - 10; //After the end of this level (hard level), I have minused 10 from the indexHard variable. I did this so indexHard resets to the beginning (0) and if the user wishes to re-do the same difficulty level, they will be able to do so. This resets the questions for 'hard' level.
     }
 
-    Console.Write("\nIf you wish to try another difficulty level, please enter 'y'. If not, please press any key to exit the program/quiz: ");
+    Console.Write("\nIf you wish to try another difficulty level or re-do the level, please enter 'y'. If not, please press any key to exit the program/quiz: ");
     userInputChoice = char.Parse(Console.ReadLine());
-
-    indexEasy = indexEasy - 10; //At the end of one loop, I have minused 10 from the indexEasy variable. I did this so indexEasy resets to the beginning (0) and if the user wishes to re-do the same difficulty level, they will be able to do so. This resets the questions for 'easy' level.
-    indexMedium = indexMedium - 10; //At the end of one loop, I have minused 10 from the indexMedium variable. I did this so indexMedium resets to the beginning (0) and if the user wishes to re-do the same difficulty level, they will be able to do so. This resets the questions for 'medium' level.
-    indexHard = indexHard - 10; //At the end of one loop, I have minused 10 from the indexHard variable. I did this so indexHard resets to the beginning (0) and if the user wishes to re-do the same difficulty level, they will be able to do so. This resets the questions for 'hard' level.
 
 } while (userInputChoice == 'y');
 
@@ -146,18 +184,3 @@ Console.WriteLine("\nThank you for using my program/quiz :). Press any key to le
 Console.ReadKey();
 }
 
-
-
-
-
-
-
-//make an method
-//use the do while loop to ask whether the user wants to cont
-// {
-//Console.WriteLine("\nThanks for using this program...Good Bye\nPress Enter to Exit");
-//Console.ReadKey();
-//}
-
-/* add more questions in the difficulty levels. 20 questions for each level but only display 10 at a time, if (indexEasy <=10)...
- */
