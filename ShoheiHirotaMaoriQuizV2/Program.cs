@@ -101,7 +101,7 @@ do
 
     while (levelDifficulty != "easy" && levelDifficulty != "medium" && levelDifficulty != "hard")
     {
-        Console.WriteLine("Please enter a valid input. Remember, the only valid inputs for this program are 'easy', 'medium' and 'hard': ");
+        Console.WriteLine("Please enter a valid input. Remember, the only valid inputs for this program are 'easy', 'medium' and 'hard': "); //This is the statement that will be outputted while the while statement above is true.
         levelDifficulty = Console.ReadLine();
     }
      
@@ -176,10 +176,10 @@ do
     }
 
     Console.Write("\nIf you wish to try another difficulty level or re-do the level, please enter 'y'. If not, please press any key to exit the program/quiz: ");
-    userInputChoice = char.Parse(Console.ReadLine());
+    //userInputChoice = char.Parse(Console.ReadLine());
    
 
-} while (userInputChoice == 'y');
+} while (char.TryParse(Console.ReadLine(), out userInputChoice) && userInputChoice == 'y');
 
 {
 Console.WriteLine("\nThank you for using my program/quiz :). Press any key to leave...");
