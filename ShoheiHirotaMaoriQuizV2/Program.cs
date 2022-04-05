@@ -1,7 +1,7 @@
 ﻿//Psuedo Code:
 
 // Set arrays
-  // maoriTermEasy, enlgishTermsEasy, englishTermsEasyOr, maoriTermsMedium, englishTermsMedium, englishTermsMediumOr, englishTermsHard, maoriTermsHard
+  // maoriTermEasy, englishTermsEasy, englishTermsEasyOr, maoriTermsMedium, englishTermsMedium, englishTermsMediumOr, englishTermsHard, maoriTermsHard
 
 // Set Index variable
   // indexEasy, indexMedium, indexHard
@@ -96,7 +96,8 @@ do
 {
     Console.WriteLine("Welcome to my Te Reo Maori quiz! There are 3 difficulty levels\n\neasy level will ask you 10 questions and they will ask you for the English meaning of a Maori term.\nmedium level will ask you 10 harder questions and they will ask you for the English meaning of a Maori term.\nhard level will ask you 10 questions and they will ask you for the Maori translation of a English term. \n\nPlease enter the difficulty level (easy, medium or hard)\n");
     string levelDifficulty = Console.ReadLine();
-
+    levelDifficulty = levelDifficulty.ToLower();
+   
 
     while (levelDifficulty != "easy" && levelDifficulty != "medium" && levelDifficulty != "hard")
     {
@@ -111,8 +112,8 @@ do
         {
             Console.Write($"\nWhat is the english translation of {maoriTermsEasy[indexEasy]}: "); //I have added a line gap (\n) to make the code more clear the user. I also changed Console.WriteLine -> Console.Write. I did this so the user inputs their answer on the same line. 
             string ans = Console.ReadLine();
-            string lCaseAns = ans.ToLower(); //I have converted the asnwer to all lowercase. I am storing this in "lCaseAns" (LowerCaseAnswer).
-            if (lCaseAns == englishTermsEasy[indexEasy] || lCaseAns == englishTermsEasyOr[indexEasy])
+            ans = ans.ToLower(); //I have converted the asnwer to all lowercase.
+            if (ans == englishTermsEasy[indexEasy] || ans == englishTermsEasyOr[indexEasy])
             {
                 Console.WriteLine("That was correct!");
                 scoreEasy++;
@@ -134,8 +135,8 @@ do
         {
             Console.Write($"\nWhat is the english translation of {maoriTermsMedium[indexMedium]}: ");
             string ans = Console.ReadLine();
-            string lCaseAns = ans.ToLower(); //I have converted the asnwer to all lowercase. I am storing this in "lCaseAns" (LowerCaseAnswer).
-            if (lCaseAns == englishTermsMedium[indexMedium] || lCaseAns == englishTermsMediumOr[indexMedium])
+            ans = ans.ToLower(); //I have converted the asnwer to all lowercase.
+            if (ans == englishTermsMedium[indexMedium] || ans == englishTermsMediumOr[indexMedium])
             {
                 Console.WriteLine("That was correct!");
                 scoreMedium++;
@@ -157,8 +158,8 @@ do
         {
             Console.Write($"\nWhat is the english translation of {englishTermsHard[indexHard]}: "); //I also had an issue here. I had a spelling error which caused the code to not run. I simply fixed spelling error and the code ran
             string ans = Console.ReadLine();
-            string lCaseAns = ans.ToLower(); //I have converted the asnwer to all lowercase. I am storing this in "lCaseAns" (LowerCaseAnswer).
-            if (lCaseAns == MaoriTermsHard[indexHard])
+            ans = ans.ToLower(); //I have converted the asnwer to all lowercase.
+            if (ans == MaoriTermsHard[indexHard])
             {
                 Console.WriteLine("That was correct!");
                 scoreHard++;
@@ -176,6 +177,7 @@ do
 
     Console.Write("\nIf you wish to try another difficulty level or re-do the level, please enter 'y'. If not, please press any key to exit the program/quiz: ");
     userInputChoice = char.Parse(Console.ReadLine());
+   
 
 } while (userInputChoice == 'y');
 
