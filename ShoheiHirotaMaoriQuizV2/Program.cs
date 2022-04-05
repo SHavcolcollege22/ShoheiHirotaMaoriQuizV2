@@ -175,7 +175,7 @@ do
         indexHard = indexHard - 10; //After the end of this level (hard level), I have minused 10 from the indexHard variable. I did this so indexHard resets to the beginning (0) and if the user wishes to re-do the same difficulty level, they will be able to do so. This resets the questions for 'hard' level.
     }
 
-    Console.Write("\nIf you wish to try another difficulty level or re-do the level, please enter 'y'. If not, please press any key to exit the program/quiz: ");
+    Console.Write("\nIf you wish to try another difficulty level or re-do the level, please enter 'y'.\nIf not, please press any key to exit the program/quiz: ");
     //userInputChoice = char.Parse(Console.ReadLine());
    
 
