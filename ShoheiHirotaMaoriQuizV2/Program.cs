@@ -79,7 +79,7 @@ string[] englishTermsMedium = { "jade", "daughter", "funeral", "family", "land",
 string[] englishTermsMediumOr = { "green stone", "daughter", "funeral", "family", "home land", "elderly", "visitors", "island", "earth", "hill" }; //I have declared my other medium difficulty english term arrays. There may be more than one translation so these are the other correct translations.
 
 string[] englishTermsHard = { "greenstone / jade", "daughter", "funeral", "family", "land / home land", "elder / elderly", "guests / visitors", "island", "sand / earth", "hill" }; //I have declared my hard difficulty english arrays. These are the questions the user will be asked to translate.
-string[] MaoriTermsHard = { "pounamu", "tamahine", "tangi", "whanaua", "whenua", "kaumatua", "manuhiri", "motu", "one", "puke" }; //I have declared my hard difficulty maori term arrays. These are the correct translations to the questions. 
+string[] MaoriTermsHard = { "pounamu", "tamahine", "tangi", "whanau", "whenua", "kaumatua", "manuhiri", "motu", "one", "puke" }; //I have declared my hard difficulty maori term arrays. These are the correct translations to the questions. 
 
 int indexEasy = 0; //I have declared my index variable for easy level and set it to 0. I have set this to 0 so it starts from the very beginning.
 int scoreEasy = 0; //I have declared my score variable for easy level and set it to 0. this will calculate the total and keep a running total
@@ -90,7 +90,9 @@ int scoreMedium = 0; //I have declared my score variable for medium level and se
 int indexHard = 0; //I have declared my index variable for hard level and set it to 0. I have set this to 0 so it starts from the very beginning.
 int scoreHard = 0; //I have declared my score variable for hard level and set it to 0. This will calculate the total and keep a running total
 
-char userInputChoice = 'y'; 
+char userInputChoice = 'y';
+
+
 
 do
 {
@@ -176,13 +178,16 @@ do
     }
 
     Console.Write("\nIf you wish to try another difficulty level or re-do the level, please enter 'y'.\nIf not, please press any key to exit the program/quiz: ");
-    //userInputChoice = char.Parse(Console.ReadLine());
+    
    
 
 } while (char.TryParse(Console.ReadLine(), out userInputChoice) && userInputChoice == 'y');
 
+static void Outro() //I have added a method named "Outro"
 {
-Console.WriteLine("\nThank you for using my program/quiz :). Press any key to leave...");
-Console.ReadKey();
+    Console.WriteLine("\nThank you for using my program/quiz :). Press any key to leave..."); //This is the information it will display
+    Console.ReadKey(); //This is also part of the method and it will wait for the user to press a key
 }
+
+Outro(); //I am calling the method here
 
