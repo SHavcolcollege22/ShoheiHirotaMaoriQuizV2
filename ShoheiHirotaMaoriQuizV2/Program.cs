@@ -47,7 +47,7 @@
         // Else
            // Print incorrect
         // Add one the the index (indexMedium++)
-     // Print the total sscore for how many questions the user got correct for medium level
+     // Print the total score for how many questions the user got correct for medium level
   // Reset the index for this level (indexMedium = indexMedium - 10) (Basically means to reset the questions)
 
 
@@ -58,7 +58,7 @@
            // Print correct (and add one to the score count (scoreHard++))
         // Else
            // Print incorrect
-        // Add one the the index (indexHard++)
+        // Add one t the index (indexHard++)
      // Print the total sscore for how many questions the user got correct for hard level
   // Reset the index for this level (indexHard = indexHard - 10)
 
@@ -96,7 +96,7 @@ char userInputChoice = 'y';
 
 do
 {
-    Console.WriteLine("Welcome to my Te Reo Maori quiz! There are 3 difficulty levels\n\neasy level will ask you 10 questions and they will ask you for the English meaning of a Maori term.\nmedium level will ask you 10 harder questions and they will ask you for the English meaning of a Maori term.\nhard level will ask you 10 questions and they will ask you for the Maori translation of a English term. \n\nPlease enter the difficulty level (easy, medium or hard)\n");
+    Console.WriteLine("Welcome to my Te Reo Māori quiz! There are 3 difficulty levels\n\neasy level will ask you 10 questions and they will ask you for the English meaning of a Māori term.\nmedium level will ask you 10 harder questions and they will ask you for the English meaning of a Maori term.\nhard level will ask you 10 questions and they will ask you for the Māori translation of a English term. \n\nPlease enter the difficulty level (easy, medium or hard)\n");
     string levelDifficulty = Console.ReadLine();
     levelDifficulty = levelDifficulty.ToLower();
    
@@ -123,7 +123,7 @@ do
             }
             else
             {
-                Console.WriteLine("That was incorrect.");
+                Console.WriteLine($"That was incorrect, the correct answer was {englishTermsEasy[indexEasy] || englishTermsEasyOr[indexEasy]); 
             }
             indexEasy++;
         }
@@ -158,7 +158,7 @@ do
     {
         foreach (string EnglishTermHard in englishTermsHard) // I have finally found the issue as to why my code did not work for difficulty level 'hard'. I had declared the same exact array in the foreach method which casued the code to bug. The solution was to change the 'englishTermHard' to 'EnglishTermHard'.
         {
-            Console.Write($"\nWhat is the english translation of {englishTermsHard[indexHard]}: "); //I also had an issue here. I had a spelling error which caused the code to not run. I simply fixed spelling error and the code ran
+            Console.Write($"\nWhat is the Māori translation of {englishTermsHard[indexHard]}: "); //I also had an issue here. I had a spelling error which caused the code to not run. I simply fixed spelling error and the code ran
             string ans = Console.ReadLine();
             ans = ans.ToLower(); //I have converted the asnwer to all lowercase.
             if (ans == MaoriTermsHard[indexHard])
