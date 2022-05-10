@@ -17,16 +17,27 @@
   // While levelDifficulty not equal to 'easy', 'medium' and 'hard'
     // Print error message
 
+  
   // If levelDifficulty == 'easy'
-    // Foreach (string MaoriTermEasy in maoriTermsEasy)
-      // What is the english translation of {maoriTermsEasy[indexEasy]}
-        // If answer == englishTermsEasy[indexEasy] || answer == englishTermsEasyOr[indexEasy]
-           // Print correct and add one to the score count (scoreEasy++)
-        // Else
-           // Print incorrect
-        // Add one to the index (index++) 
-     // Print the total score for how many questions the user got correct for easy level
-  //
+    // What is the correct definition of: Kia Ora?\n1: Hello / Hi\n2: Food\n3: Red\n4: Ocean
+      // If answer == '1'
+        // Print correct and add one point to the score count (ScoreEasy++)
+      // Else
+        // Print incorrect message as well as the correct answer (That was incorrect, the correct answer is 1 (Hello / Hi).
+
+    // What is the correct definition of: Awa?\n1: Family\n2: School\n3: River\n4: Book
+      // If answer == '3'
+        // Print correct and add one point to the score count (ScoreEasy++)
+      // Else
+        // Print incorrect message as well as the correct answer (That was incorrect, the correct asnwer is 3 (River).
+
+    // What is the correct definition of: Kai ?\n1: Work\n2: Food\n3: Rich\n4: Park
+      // If answer == '3'
+        // Print correct and add one to the score count (ScoreEasy++)
+
+
+
+
 
   // If levelDifficulty == 'easy'
     // Foreach (string MaoriTermEasy in maoriTermsEasy)
@@ -92,11 +103,9 @@ int scoreHard = 0; //I have declared my score variable for hard level and set it
 
 char userInputChoice = 'y';
 
-
-
 do
 {
-    Console.WriteLine("Welcome to my Te Reo Māori quiz! There are 3 difficulty levels\n\neasy level will ask you 10 questions and they will ask you for the English meaning of a Māori term.\nmedium level will ask you 10 harder questions and they will ask you for the English meaning of a Maori term.\nhard level will ask you 10 questions and they will ask you for the Māori translation of a English term. \n\nPlease enter the difficulty level (easy, medium or hard)\n");
+    Console.WriteLine("Welcome to my Te Reo Māori quiz! There are 3 difficulty levels\n\neasy level are multiple choice questions where you just have to choose the correct option\nmedium level will ask you 10 harder questions and they will ask you for the English meaning of a Maori term.\nhard level will ask you 10 questions and they will ask you for the Māori translation of a English term. \n\nPlease enter the difficulty level (easy, medium or hard)\n");
     string levelDifficulty = Console.ReadLine();
     levelDifficulty = levelDifficulty.ToLower();
    
@@ -107,137 +116,133 @@ do
         levelDifficulty = Console.ReadLine();
     }
 
-
-
     if (levelDifficulty == "easy") //This is the level difficulty 'easy'. If the user enters 'easy', then the following questions will execute.
     {
-        Console.WriteLine("What is the correct definition of: Kia Ora?\n1: Hello / Hi\n2: Food\n3: Red\n4: Ocean ");
+        Console.WriteLine("What is the correct definition of: Kia Ora?\n1: Hello / Hi\n2: Food\n3: Red\n4: Ocean "); //This is asking the question
         string ans = Console.ReadLine();
-        if (ans == "1")
+        if (ans == "1") //This is the only answer to the question
         {
-            Console.WriteLine("That was correct!");
-            scoreEasy++; // If the user answers 'hi' or 'hello', then they will get one point which will be added to the 'score' variable will and calculated at the end 
+            Console.WriteLine("That was correct!\n");
+            scoreEasy++; // If the user answers '1', then they will get one point which will be added to the 'scoreEasy' variable will and calculated at the end 
+            
         }
         else
         {
-            Console.WriteLine("That was incorrect.");
+            Console.WriteLine("That was incorrect, the correct answer is 1 (Hello / Hi).\n"); //If the user gets the question wrong, they will get an incorrect message as well as the correct answer for future reference
+            
         }
-
-        Console.WriteLine("What is the correct definition of: Awa?\n1: Family\n2: School\n3: River Red\n4: Book ");
+        // I have added Console.Clear after each question. This ensures a clear and easy view of the screen / next questions
+       
+        Console.WriteLine("What is the correct definition of: Awa?\n1: Family\n2: School\n3: River\n4: Book ");
         ans = Console.ReadLine();
         if (ans == "3")
         {
-            Console.WriteLine("That was correct!");
+            Console.WriteLine("That was correct!\n");
             scoreEasy++;
 
         }
         else
         {
-            Console.WriteLine("That was incorrect.");
+            Console.WriteLine("That was incorrect, the correct answer is 3 (River).\n");
         }
 
         Console.WriteLine("What is the correct definition of: Kai ?\n1: Work\n2: Food\n3: Rich\n4: Park ");
         ans = Console.ReadLine();
         if (ans == "2")
         {
-            Console.WriteLine("That was correct!");
+            Console.WriteLine("That was correct!\n");
             scoreEasy++;
 
         }
         else
         {
-            Console.WriteLine("That was incorrect.");
+            Console.WriteLine("That was incorrect, the correct answer is 2 (Food).\n");
         }
 
         Console.WriteLine("What is the correct definition of: Waiata?\n1: Soccer\n2: Sing / Song\n3: Apple\n4: Piano");
         ans = Console.ReadLine();
         if (ans == "2")
         {
-            Console.WriteLine("That was correct!");
+            Console.WriteLine("That was correct!\n");
             scoreEasy++;
-
         }
         else
         {
-            Console.WriteLine("That was incorrect.");
+            Console.WriteLine("That was incorrect, the correct answer is 2 (Sing / Song).\n");
         }
 
         Console.WriteLine("What is the correct definition of: Waka ?\n1: Boat\n2: Car\n3: Bike\n4: Canoe");
         ans = Console.ReadLine();
         if (ans == "4")
         {
-            Console.WriteLine("That was correct!");
+            Console.WriteLine("That was correct!\n");
             scoreEasy++;
-
         }
         else
         {
-            Console.WriteLine("That was incorrect.");
+            Console.WriteLine("That was incorrect, the correct answer is 4 (Canoe).\n");
         }
 
         Console.WriteLine("What is the correct definition of: Aroha?\n1: Love\n2: Hate\n3: Nuetral\n4: Pink");
         ans = Console.ReadLine();
         if (ans == "1")
         {
-            Console.WriteLine("That was correct!");
+            Console.WriteLine("That was correct!\n");
             scoreEasy++;
-
         }
         else
         {
-            Console.WriteLine("That was incorrect.");
+            Console.WriteLine("That was incorrect, the correct answer is 1 (Love).\n");
         }
 
         Console.WriteLine("What is the correct definition of: Morena ?\n1: Good morning\n2: Good evening\n3: Good night\n4: Good day ");
         ans = Console.ReadLine();
         if (ans == "1")
         {
-            Console.WriteLine("That was correct!");
+            Console.WriteLine("That was correct!\n");
             scoreEasy++;
-
         }
         else
         {
-            Console.WriteLine("That was incorrect.");
+            Console.WriteLine("That was incorrect, the correct answer is 1 (Good morning).\n");
         }
 
         Console.WriteLine("What is the correct definition of: Maunga ?\n1: Volcano\n2: Lake\n3: Rocks\n4: Mountain ");
         ans = Console.ReadLine();
         if (ans == "4")
         {
-            Console.WriteLine("That was correct!");
+            Console.WriteLine("That was correct!\n");
             scoreEasy++;
-
         }
         else
         {
-            Console.WriteLine("That was incorrect.");
+            Console.WriteLine("That was incorrect, the correct answer is 4 (Mountain).\n");
         }
 
         Console.WriteLine("What is the correct definition of: Tāmaki Makaurau ? \n1: Wellignton\n2: Hamilton\n3: Auckalnd\n4: Christchurch");
         ans = Console.ReadLine();
         if (ans == "3")
         {
-            Console.WriteLine("That was correct!");
+            Console.WriteLine("That was correct!\n");
             scoreEasy++;
         }
         else
         {
-            Console.WriteLine("That was incorrect.");
+            Console.WriteLine("That was incorrect, the correct answer is 3 (Auckland).\n");
         }
 
         Console.WriteLine("What is the correct definition of: Tahi ? \n1: One\n2: Two\n3: Three\n4: Four");
         ans = Console.ReadLine();
         if (ans == "1")
         {
-            Console.WriteLine("That was correct!");
+            Console.WriteLine("That was correct!\n");
             scoreEasy++;
-
         }
         else
         {
-            Console.WriteLine("That was incorrect.");
+            Console.WriteLine("That was incorrect, the correct answer is 1 (One).\n");
         }
+        
         Console.WriteLine($"Your score was {scoreEasy} / 10");
     }
 
@@ -315,6 +320,7 @@ do
    
 
 } while (char.TryParse(Console.ReadLine(), out userInputChoice) && userInputChoice == 'y');
+
 
 static void Outro() //I have added a method named "Outro"
 {
