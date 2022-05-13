@@ -85,12 +85,12 @@ string[] maoriTermsEasy = { "kia ora", "awa", "kai", "waiata", "waka", "aroha", 
 string[] englishTermsEasy = { "hello", "river", "food", "song", "canoe", "love", "good morning", "mountain", "auckland", "one" }; //I have declared my arrays which will be used in my quiz 
 string[] englishTermsEasyOr = { "hi", "river", "food", "sing", "canoe", "love", "good morning", "mountain", "auckalnd", "one" }; // I have declared an 'Or' array as there may be more than one answer for a question. So if they get one of the two answers, then they will be correct/ and get a point
 
-string[] maoriTermsMedium = { "pounamu", "tamāhine", "tangi", "whānau", "whenua", "Kaumatua", "manuhiri", "motu", "one", "puke" }; //I have declared my medium difficulty arrays. These are the questions the user will be asked to translate. 
-string[] englishTermsMedium = { "jade", "daughter", "funeral", "family", "land", "elder", "guests", "island", "sand", "hill"  }; //I have delared my medium diffculty english term arrays. These are the correct translations to the questions. 
-string[] englishTermsMediumOr = { "green stone", "daughter", "funeral", "family", "home land", "elderly", "visitors", "island", "earth", "hill" }; //I have declared my other medium difficulty english term arrays. There may be more than one translation so these are the other correct translations.
+string[] maoriTermsMedium = { "pounamu", "Moana", "Haere mai", "Huarahi (hint, what you drive on)", "whenua", "Kaumatua", "manuhiri", "mahi", "one", "wahine" }; //I have declared my medium difficulty arrays. These are the questions the user will be asked to translate. 
+string[] englishTermsMedium = { "jade", "sea", "welcome", "road", "land", "elder", "guests", "work", "sand", "wife"  }; //I have delared my medium diffculty english term arrays. These are the correct translations to the questions. 
+string[] englishTermsMediumOr = { "green stone", "ocean", "enter", "highway", "home land", "elderly", "visitors", "activity", "earth", "woman" }; //I have declared my other medium difficulty english term arrays. There may be more than one translation so these are the other correct translations.
 
-string[] englishTermsHard = { "greenstone / jade", "daughter", "funeral", "family", "land / home land", "elder / elderly", "guests / visitors", "island", "sand / earth", "hill" }; //I have declared my hard difficulty english arrays. These are the questions the user will be asked to translate.
-string[] MaoriTermsHard = { "pounamu", "tamahine", "tangi", "whanau", "whenua", "kaumatua", "manuhiri", "motu", "one", "puke" }; //I have declared my hard difficulty maori term arrays. These are the correct translations to the questions. 
+string[] englishTermsHard = { "greenstone / jade", "daughter", "funeral", "family", "land / home land", "elder / elderly", "guests / visitors", "clan / sub-tribe", "sand / earth", "hill" }; //I have declared my hard difficulty english arrays. These are the questions the user will be asked to translate.
+string[] MaoriTermsHard = { "pounamu", "tamahine", "tangi", "whanau", "whenua", "kaumatua", "manuhiri", "hapu", "one", "puke" }; //I have declared my hard difficulty maori term arrays. These are the correct translations to the questions. 
 
 int indexEasy = 0; //I have declared my index variable for easy level and set it to 0. I have set this to 0 so it starts from the very beginning.
 int scoreEasy = 0; //I have declared my score variable for easy level and set it to 0. this will calculate the total and keep a running total
@@ -121,6 +121,7 @@ do
         Console.WriteLine("What is the correct definition of: Kia Ora?\n1: Hello / Hi\n2: Food\n3: Red\n4: Ocean "); //This is asking the question
         string ans = Console.ReadLine();
         if (ans == "1") //This is the only answer to the question
+        
         {
             Console.WriteLine("That was correct!\n");
             scoreEasy++; // If the user answers '1', then they will get one point which will be added to the 'scoreEasy' variable will and calculated at the end 
@@ -284,7 +285,7 @@ do
             }
             else
             {
-                Console.WriteLine("That was incorrect.");
+                Console.WriteLine($"That was incorrect, the correct answer is {englishTermsMedium[indexMedium]}/{englishTermsMediumOr[indexMedium]}"); //After the user has entered the wrong answer, the correct answer will be revealed
             }
             indexMedium++;
         }
@@ -307,7 +308,7 @@ do
             }
             else
             {
-                Console.WriteLine("That was incorrect."); 
+                Console.WriteLine($"That was incorrect, the correct answer is {MaoriTermsHard[indexHard]}"); //After the user has entered the wrong answer, the correct answer will be revealed
             }
             indexHard++;
         }
