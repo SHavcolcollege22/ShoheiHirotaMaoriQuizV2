@@ -23,17 +23,74 @@
       // If answer == '1'
         // Print correct and add one point to the score count (ScoreEasy++)
       // Else
-        // Print incorrect message as well as the correct answer (That was incorrect, the correct answer is 1 (Hello / Hi).
+        // Print incorrect message as well as the correct answer
+
 
     // What is the correct definition of: Awa?\n1: Family\n2: School\n3: River\n4: Book
       // If answer == '3'
         // Print correct and add one point to the score count (ScoreEasy++)
       // Else
-        // Print incorrect message as well as the correct answer (That was incorrect, the correct asnwer is 3 (River).
+        // Print incorrect message as well as the correct answer
 
-    // What is the correct definition of: Kai ?\n1: Work\n2: Food\n3: Rich\n4: Park
+    // What is the correct definition of: Kai?\n1: Work\n2: Food\n3: Rich\n4: Park
       // If answer == '3'
         // Print correct and add one to the score count (ScoreEasy++)
+     // Else
+        // Print incorrect message as well as the correct answer
+
+    // What is the correct definition of: Waiata?\n1: Soccer\n2: Sing / Song\n3: Apple\n4: Piano
+      // If answer == '2'
+        // Print correct and add one to the score count (ScoreEasy++)
+     // Else
+        // Print incorrect message as well as the correct answer
+
+
+    // What is the correct definition of: Waka ?\n1: Boat\n2: Car\n3: Bike\n4: Canoe
+      // If answer == '4'
+        // Print correct and add one to the score count (ScoreEasy++)
+     // Else
+        // Print incorrect message as well as the correct answer
+
+    // What is the correct definition of: Aroha?\n1: Love\n2: Hate\n3: Nuetral\n4: Pink
+      // If answer == '1'
+        // Print correct and add one to the score count (ScoreEasy++)
+     // Else
+        // Print incorrect message as well as the correct answer
+
+    // What is the correct definition of: Morena ?\n1: Good morning\n2: Good evening\n3: Good night\n4: Good day
+      // If answer == '1'
+        // Print correct and add one to the score count (ScoreEasy++)
+     // Else
+        // Print incorrect message as well as the correct answer
+
+    // What is the correct definition of: Maunga ?\n1: Volcano\n2: Lake\n3: Rocks\n4: Mountain 
+      // If answer == '4'
+        // Print correct and add one to the score count (ScoreEasy++)
+     // Else
+        // Print incorrect message as well as the correct answer
+
+    // What is the correct definition of: Tāmaki Makaurau ? \n1: Wellignton\n2: Hamilton\n3: Auckalnd\n4: Christchurch
+      // If answer == '3'
+        // Print correct and add one to the score count (ScoreEasy++)
+     // Else
+        // Print incorrect message as well as the correct answer
+
+    // What is the correct definition of: Tahi ? \n1: One\n2: Two\n3: Three\n4: Four
+      // If answer == '1'
+        // Print correct and add one to the score count (ScoreEasy++)
+     // Else
+        // Print incorrect message as well as the correct answer
+
+   // Print the total score for how many questions the user got correct for easy level
+
+
+
+
+
+
+
+  
+
 
 
 
