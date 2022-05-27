@@ -42,12 +42,14 @@
       // If answer == '2'
         // Print correct and add one to the score count (ScoreEasy++)
      // Else
+
         // Print incorrect message as well as the correct answer
 
 
     // What is the correct definition of: Waka ?\n1: Boat\n2: Car\n3: Bike\n4: Canoe
       // If answer == '4'
         // Print correct and add one to the score count (ScoreEasy++)
+
      // Else
         // Print incorrect message as well as the correct answer
 
@@ -115,9 +117,9 @@
  
 
  
-string[] maoriTermsEasy = { "kia ora", "awa", "kai", "waiata", "waka", "aroha", "morena", "maunga", "tamaki makaurau", "tahi" }; //I have declared my easy difficuly arrays. These are the questions the user will be asked to translate. 
-string[] englishTermsEasy = { "hello", "river", "food", "song", "canoe", "love", "good morning", "mountain", "auckland", "one" }; //I have declared my arrays which will be used in my quiz 
-string[] englishTermsEasyOr = { "hi", "river", "food", "sing", "canoe", "love", "good morning", "mountain", "auckalnd", "one" }; // I have declared an 'Or' array as there may be more than one answer for a question. So if they get one of the two answers, then they will be correct/ and get a point
+string[] maoriTermsEasy = { "Kia Ora?", "Awa?", "Kai ?", "Waiata?", "Waka?", "Aroha?", "Morena?", "Maunga?", "Tāmaki Makaurau?", "Tahi?" }; //I have declared my easy difficuly arrays. These are the questions the user will be asked to translate. 
+string[] maoriOptionsEasy = { "\n1: Hello / Hi\n2: Food\n3: Red\n4: Ocean", "\n1: Family\n2: School\n3: River\n4: Book", "\n1: Work\n2: Food\n3: Rich\n4: Park", "\n1: Soccer\n2: Sing / Song\n3: Apple\n4: Piano", "\n1: Boat\n2: Car\n3: Bike\n4: Canoe", "\n1: Love\n2: Hate\n3: Nuetral\n4: Pink", "?\n1: Good morning\n2: Good evening\n3: Good night\n4: Good day", "\n1: Volcano\n2: Lake\n3: Rocks\n4: Mountain", "\n1: Wellignton\n2: Hamilton\n3: Auclasknd\n4: Christchurch", " \n1: One\n2: Two\n3: Three\n4: Four" };
+string[] englishTermsEasy = { "1", "3", "2", "2", "4", "1", "1", "4", "3", "1" }; //I have declared my arrays which will be used in my quiz 
 
 string[] maoriTermsMedium = { "pounamu", "Moana", "Haere mai", "Huarahi (hint, what you drive on)", "whenua", "Kaumatua", "manuhiri", "mahi", "one", "wahine" }; //I have declared my medium difficulty arrays. These are the questions the user will be asked to translate. 
 string[] englishTermsMedium = { "jade", "sea", "welcome", "road", "land", "elder", "guests", "work", "sand", "wife"  }; //I have delared my medium diffculty english term arrays. These are the correct translations to the questions. 
@@ -151,6 +153,7 @@ do
         levelDifficulty = Console.ReadLine();
     }
 
+    /*
     if (levelDifficulty == "easy") //This is the level difficulty 'easy'. If the user enters 'easy', then the following questions will execute.
     {
         Console.WriteLine("What is the correct definition of: Kia Ora?\n1: Hello / Hi\n2: Food\n3: Red\n4: Ocean "); //This is asking the question
@@ -262,7 +265,7 @@ do
             Console.WriteLine("That was incorrect, the correct answer is 4 (Mountain).\n");
         }
 
-        Console.WriteLine("What is the correct definition of: Tāmaki Makaurau ? \n1: Wellignton\n2: Hamilton\n3: Auckalnd\n4: Christchurch");
+        Console.WriteLine("What is the correct definition of: Tāmaki Makaurau ? \n1: Wellignton\n2: Hamilton\n3: Auclasknd\n4: Christchurch");
         ans = Console.ReadLine();
         Console.Clear();
         if (ans == "3")
@@ -291,7 +294,39 @@ do
         Console.WriteLine($"Your score was {scoreEasy} / 10");
     }
 
- 
+    */
+
+
+ //+ maoriOptionsEasy
+
+    if (levelDifficulty == "easy")
+    {
+        foreach (string MaoriTermEasy in maoriTermsEasy)
+        {
+            Console.Write($"\nWhat is the english translation of {maoriTermsEasy[indexEasy] + maoriOptionsEasy[indexEasy]}:\n"); //I have added a line gap (\n) to make the code more clear the user. I also changed Console.WriteLine -> Console.Write. I did this so the user inputs their answer on the same line. 
+            string ans = Console.ReadLine();
+            ans = ans.ToLower(); //I have converted the asnwer to all lowercase.
+            Console.Clear();
+            if (ans == englishTermsEasy[indexEasy])
+            {
+                Console.WriteLine("That was correct!");
+                scoreEasy++;
+
+            }
+            else
+            {
+                Console.WriteLine($"That was incorrect, the correct answer is {maoriTermsEasy[indexEasy]}");
+            }
+            indexEasy++;
+        }
+        Console.WriteLine($"\n\nYour score was {scoreEasy} / 10");
+        indexEasy = indexEasy - 10; //After the end of this level (easy level), I have minused 10 from the indexEasy variable. I did this so indexEasy resets to the beginning (0) and if the user wishes to re-do the same difficulty level, they will be able to do so. This resets the questions for 'easy' level.
+    }
+
+
+
+
+
     if (levelDifficulty == "medium")
     {
         foreach (string MaoriTermMedium in maoriTermsMedium)
