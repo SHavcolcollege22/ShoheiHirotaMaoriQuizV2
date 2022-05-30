@@ -151,153 +151,9 @@ do
         Console.Clear(); // I have added console.clear if they input an invalid choice. This clears the screen so the screen isn't full and crammed
         Console.WriteLine("Please enter a valid input. Remember, the only valid inputs for this program are 'easy', 'medium' and 'hard': "); //This is the statement that will be outputted while the while statement above is true.
         levelDifficulty = Console.ReadLine();
+        levelDifficulty = levelDifficulty.ToLower();
     }
 
-    /*
-    if (levelDifficulty == "easy") //This is the level difficulty 'easy'. If the user enters 'easy', then the following questions will execute.
-    {
-        Console.WriteLine("What is the correct definition of: Kia Ora?\n1: Hello / Hi\n2: Food\n3: Red\n4: Ocean "); //This is asking the question
-        string ans = Console.ReadLine();
-        Console.Clear(); // I have added this so the screen clears out. This ensures a clean, simple view for the users.
-        if (ans == "1") //This is the only answer to the question
-        
-        {
-            Console.WriteLine("That was correct!\n");
-            scoreEasy++; // If the user answers '1', then they will get one point which will be added to the 'scoreEasy' variable will and calculated at the end 
-            
-        }
-        else
-        {
-            Console.WriteLine("That was incorrect, the correct answer is 1 (Hello / Hi).\n"); //If the user gets the question wrong, they will get an incorrect message as well as the correct answer for future reference
-            
-        }
-       
-        Console.WriteLine("What is the correct definition of: Awa?\n1: Family\n2: School\n3: River\n4: Book ");
-        ans = Console.ReadLine();
-        Console.Clear();
-        if (ans == "3")
-        {
-            Console.WriteLine("That was correct!\n");
-            scoreEasy++;
-
-        }
-        else
-        {
-            Console.WriteLine("That was incorrect, the correct answer is 3 (River).\n");
-        }
-
-        Console.WriteLine("What is the correct definition of: Kai ?\n1: Work\n2: Food\n3: Rich\n4: Park ");
-        ans = Console.ReadLine();
-        Console.Clear();
-        if (ans == "2")
-        {
-            Console.WriteLine("That was correct!\n");
-            scoreEasy++;
-
-        }
-        else
-        {
-            Console.WriteLine("That was incorrect, the correct answer is 2 (Food).\n");
-        }
-
-        Console.WriteLine("What is the correct definition of: Waiata?\n1: Soccer\n2: Sing / Song\n3: Apple\n4: Piano");
-        ans = Console.ReadLine();
-        Console.Clear();
-        if (ans == "2")
-        {
-            Console.WriteLine("That was correct!\n");
-            scoreEasy++;
-        }
-        else
-        {
-            Console.WriteLine("That was incorrect, the correct answer is 2 (Sing / Song).\n");
-        }
-
-        Console.WriteLine("What is the correct definition of: Waka ?\n1: Boat\n2: Car\n3: Bike\n4: Canoe");
-        ans = Console.ReadLine();
-        Console.Clear();
-        if (ans == "4")
-        {
-            Console.WriteLine("That was correct!\n");
-            scoreEasy++;
-        }
-        else
-        {
-            Console.WriteLine("That was incorrect, the correct answer is 4 (Canoe).\n");
-        }
-
-        Console.WriteLine("What is the correct definition of: Aroha?\n1: Love\n2: Hate\n3: Nuetral\n4: Pink");
-        ans = Console.ReadLine();
-        Console.Clear();
-        if (ans == "1")
-        {
-            Console.WriteLine("That was correct!\n");
-            scoreEasy++;
-        }
-        else
-        {
-            Console.WriteLine("That was incorrect, the correct answer is 1 (Love).\n");
-        }
-
-        Console.WriteLine("What is the correct definition of: Morena ?\n1: Good morning\n2: Good evening\n3: Good night\n4: Good day ");
-        ans = Console.ReadLine();
-        Console.Clear();
-        if (ans == "1")
-        {
-            Console.WriteLine("That was correct!\n");
-            scoreEasy++;
-        }
-        else
-        {
-            Console.WriteLine("That was incorrect, the correct answer is 1 (Good morning).\n");
-        }
-
-        Console.WriteLine("What is the correct definition of: Maunga ?\n1: Volcano\n2: Lake\n3: Rocks\n4: Mountain ");
-        ans = Console.ReadLine();
-        Console.Clear();
-        if (ans == "4")
-        {
-            Console.WriteLine("That was correct!\n");
-            scoreEasy++;
-        }
-        else
-        {
-            Console.WriteLine("That was incorrect, the correct answer is 4 (Mountain).\n");
-        }
-
-        Console.WriteLine("What is the correct definition of: Tāmaki Makaurau ? \n1: Wellignton\n2: Hamilton\n3: Auclasknd\n4: Christchurch");
-        ans = Console.ReadLine();
-        Console.Clear();
-        if (ans == "3")
-        {
-            Console.WriteLine("That was correct!\n");
-            scoreEasy++;
-        }
-        else
-        {
-            Console.WriteLine("That was incorrect, the correct answer is 3 (Auckland).\n");
-        }
-
-        Console.WriteLine("What is the correct definition of: Tahi ? \n1: One\n2: Two\n3: Three\n4: Four");
-        ans = Console.ReadLine();
-        Console.Clear();
-        if (ans == "1")
-        {
-            Console.WriteLine("That was correct!\n");
-            scoreEasy++;
-        }
-        else
-        {
-            Console.WriteLine("That was incorrect, the correct answer is 1 (One).\n");
-        }
-        
-        Console.WriteLine($"Your score was {scoreEasy} / 10");
-    }
-
-    */
-
-
- //+ maoriOptionsEasy
 
     if (levelDifficulty == "easy")
     {
@@ -305,7 +161,7 @@ do
         {
             Console.Write($"\nWhat is the english translation of {maoriTermsEasy[indexEasy] + maoriOptionsEasy[indexEasy]}:\n"); //I have added a line gap (\n) to make the code more clear the user. I also changed Console.WriteLine -> Console.Write. I did this so the user inputs their answer on the same line. 
             string ans = Console.ReadLine();
-            ans = ans.ToLower(); //I have converted the asnwer to all lowercase.
+            //ans = ans.ToLower(); //I have converted the asnwer to all lowercase.
             Console.Clear();
             if (ans == englishTermsEasy[indexEasy])
             {
